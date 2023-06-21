@@ -2,13 +2,13 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 w-full h-[12vh] px-[40px] bg-[#1111114D] text-white backdrop-blur-[20px] flex justify-between items-center">
+    <nav className="fixed top-0 w-full min-h-[12vh] px-[40px] bg-[#1111114D] text-white backdrop-blur-[20px] flex justify-between items-center">
       <img
         className="w-[157.95px] h-fit"
         src="https://framerusercontent.com/images/HEnhjs6tIeyJr0PpZAySo7Fn5gY.png?scale-down-to=2048"
         alt="logo"
       />
-      <ul className="flex gap-[20px] justify-between items-center">
+      <ul className="hidden sm:flex gap-[20px] justify-between items-center">
         <li className="hover:text-[#0088ff] cursor-pointer font-[500]">
           Features
         </li>
