@@ -20,7 +20,7 @@ const Tokenomics = () => {
         <div className="w-full md:w-[90%] lg:w-[57%]">
           <img src={tokenTable} alt="table" />
         </div>
-        <div className="w-[600px] lg:h-fit lg:flex-1">
+        <div className="w-[500px] vsm:w-[600px] lg:h-fit lg:flex-1">
           <img src={tokenChart} alt="chart" />
         </div>
       </div>

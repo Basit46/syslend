@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="relative font-inter">
+    <div className="relative font-inter overflow-x-hidden">
       <Navbar />
       <Hero />
       <Section2 />

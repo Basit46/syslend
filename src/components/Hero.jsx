@@ -3,7 +3,7 @@ import heroImg from "../assets/heroImg.webp";
 const Hero = () => {
   return (
     <div className="hero  w-full">
-      <div className="h-[120vh] w-full px-[35px] md:px-[80px] flex items-center text-white">
+      <div className="h-[100vh] vsm:h-[120vh] w-full px-[35px] md:px-[80px] flex items-center text-white">
         <div className="flex-1 flex xl:block flex-col items-center">
           <h1 className="text-center xl:text-left font-montserrat whitespace-pre-wrap font-semibold text-white text-[35px] md:text-[50px] xmd:text-[65px] 2xl:text-[81px] tracking-[-1.5px] leading-[1.2]">
             Pioneering DeFi in the SYSCOIN Ecosystem
