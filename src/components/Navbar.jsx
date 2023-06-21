@@ -16,7 +16,7 @@ const Navbar = () => {
       <ul
         className={`${
           open ? "h-[170px]" : "h-0 overflow-hidden"
-        } bg-[red] fixed top-[12vh] left-0 w-[100vw] md:w-fit  md:h-fit md:static flex flex-col md:flex-row gap-[20px] md:justify-between items-center`}
+        } bg-[red] md:bg-transparent fixed top-[12vh] left-0 w-[100vw] md:w-fit  md:h-fit md:static flex flex-col md:flex-row gap-[20px] md:justify-between items-center`}
       >
         <li className="hover:text-[#0088ff] cursor-pointer font-[500]">
           Features
