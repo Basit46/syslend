@@ -6,11 +6,13 @@ import Features from "./components/Features";
 import Roadmap from "./components/Roadmap";
 import Tokenomics from "./components/Tokenomics";
 import Footer from "./components/Footer";
+import { useState } from "react";
 
 function App() {
+  const [openMenu, setOpenMenu] = useState(false);
   return (
     <div className="relative font-inter overflow-x-hidden">
-      <Navbar />
+      <Navbar openMenu={openMenu} setOpenMenu={setOpenMenu} />
       <Hero />
       <Section2 />
       <About />
