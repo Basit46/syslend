@@ -17,7 +17,7 @@ const Section2 = () => {
             src={syscoinImg}
             alt="syscoin"
           />
-          <p className="font-manrope font-semibold text-center xmd:text-left text-[13px] md:text-[17px] lg:text-xl tracking-normal leading-[130%]">
+          <p className="px-[40px] xmd:px-0 font-manrope font-semibold text-center xmd:text-left text-[13px] md:text-[17px] lg:text-xl tracking-normal leading-[130%]">
             SYScoin harnesses Bitcoin security, leverages NEVM Smart contracts
             and Scale the blockchain with Layer 2 Rollux (ZK Rollups)
           </p>

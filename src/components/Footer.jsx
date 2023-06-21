@@ -3,8 +3,8 @@ import { FaTwitter, FaTelegram, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="text-white px-[170px] pb-[40px] bg-[#0C0150]">
-      <div className="links-wrap flex gap-[200px] pb-[50px] border-b-[1px] border-b-white/[0.2]">
+    <footer className="text-white px-[40px] md:px-[60px] lg:px-[170px] pb-[40px] bg-[#0C0150]">
+      <div className="links-wrap flex flex-col md:flex-row gap-[30px] md:gap-[200px] pb-[50px] border-b-[1px] border-b-white/[0.2]">
         <ul>
           <h1>SYSLEND</h1>
           <li>
