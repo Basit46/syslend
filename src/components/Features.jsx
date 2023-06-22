@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from "react";
-import { useState } from "react";
 import Feature1 from "./Feature1";
 import Feature2 from "./Feature2";
 import Feature3 from "./Feature3";
@@ -7,6 +6,9 @@ import Feature4 from "./Feature4";
 import Feature5 from "./Feature5";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,31 +30,33 @@ const Features = () => {
     );
   }, []);
 
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    // console.log(count);
-    if (count == 5) {
-      slideRef.current.style.transition = "0s";
-      slideRef.current.style.transform = `translateX(-${count * 380}px)`;
-    } else {
-      slideRef.current.style.transition = "1s";
-      slideRef.current.style.transform = `translateX(-${count * 380}px)`;
-    }
-  }, [count]);
+  let settings = {
+    arrows: false,
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    cssEase: "linear",
+    centerMode: true,
+    centerPadding: "0px",
+    autoplay: true,
+    autoplaySpeed: 5000,
+  };
 
-  useEffect(() => {
-    const timeInt = setInterval(() => {
-      if (count < 5) {
-        setCount((prev) => (prev + 1) % 6);
-      } else {
-        setCount(0);
-      }
-    }, 2000);
-
-    return () => {
-      clearInterval(timeInt);
-    };
-  }, []);
+  let settingsMobile = {
+    arrows: false,
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    cssEase: "linear",
+    centerMode: true,
+    centerPadding: "0px",
+    autoplay: true,
+    autoplaySpeed: 5000,
+  };
 
   return (
     <div
@@ -71,45 +75,24 @@ const Features = () => {
           more than you think
         </p>
 
-        <div className="mt-[50px] w-full overflow-x-hidden">
-          <div ref={slideRef} className="slide w-fit duration-200">
-            <div className="flex gap-x-[50px] px-[50px]">
-              <Feature1 />
-              {/* <Feature2 /> */}
-              <Feature3 />
-              <Feature4 />
-              <Feature5 />
-
-              <Feature1 />
-              {/* <Feature2 /> */}
-              <Feature3 />
-              <Feature4 />
-              <Feature5 />
-            </div>
-          </div>
+        <div className="mt-[50px] w-full h-fit overflow-x-hidden px-[50px] hidden vsm:flex justify-center ">
+          <Slider {...settings} className="w-[100%] flex justify-center">
+            <Feature1 />
+            <Feature2 />
+            <Feature3 />
+            <Feature4 />
+            <Feature5 />
+          </Slider>
         </div>
 
-        <div className="mt-[40px] mx-auto bg-[#00333333] w-[90px] h-[30px] rounded-[50px] flex justify-evenly items-center">
-          <div
-            className={`${
-              count === 0 ? "opacity-100" : "opacity-50"
-            } w-[10px] h-[10px] rounded-full bg-white`}
-          />
-          <div
-            className={`${
-              count === 1 ? "opacity-100" : "opacity-50"
-            } w-[10px] h-[10px] rounded-full bg-white`}
-          />
-          <div
-            className={`${
-              count === 2 ? "opacity-100" : "opacity-50"
-            } w-[10px] h-[10px] rounded-full bg-white`}
-          />
-          <div
-            className={`${
-              count === 3 ? "opacity-100" : "opacity-50"
-            } w-[10px] h-[10px] rounded-full bg-white`}
-          />
+        <div className="mt-[50px] w-full h-fit overflow-x-hidden flex vsm:hidden justify-center ">
+          <Slider {...settingsMobile} className="w-[100%] flex justify-center">
+            <Feature1 />
+            <Feature2 />
+            <Feature3 />
+            <Feature4 />
+            <Feature5 />
+          </Slider>
         </div>
       </div>
     </div>
