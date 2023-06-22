@@ -43,7 +43,7 @@ const Features = () => {
     centerMode: true,
     centerPadding: "0px",
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 7000,
     beforeChange: (current, next) => setCurrentSlide(next),
   };
 
@@ -58,7 +58,7 @@ const Features = () => {
     centerMode: true,
     centerPadding: "0px",
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 7000,
     beforeChange: (current, next) => setCurrentSlide(next),
   };
 
