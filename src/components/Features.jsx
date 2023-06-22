@@ -47,6 +47,21 @@ const Features = () => {
     beforeChange: (current, next) => setCurrentSlide(next),
   };
 
+  let settingsMd = {
+    arrows: false,
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    cssEase: "linear",
+    centerMode: true,
+    centerPadding: "0px",
+    autoplay: true,
+    autoplaySpeed: 7000,
+    beforeChange: (current, next) => setCurrentSlide(next),
+  };
+
   let settingsMobile = {
     arrows: false,
     dots: false,
@@ -84,12 +99,8 @@ const Features = () => {
           more than you think
         </p>
 
-        <div className="mt-[50px] w-full h-fit overflow-x-hidden px-[50px] hidden sm:flex justify-center ">
-          <Slider
-            ref={sliderRef}
-            {...settings}
-            className="w-[100%] flex justify-center h-fit"
-          >
+        <div className="mt-[50px] w-full h-fit overflow-x-hidden px-[50px] hidden xl:flex justify-center ">
+          <Slider ref={sliderRef} {...settings} className="w-[100%] h-fit">
             <Feature1 />
             <Feature2 />
             <Feature3 />
@@ -98,12 +109,18 @@ const Features = () => {
           </Slider>
         </div>
 
-        <div className="mt-[50px] w-full h-fit overflow-x-hidden flex sm:hidden justify-center">
-          <Slider
-            ref={sliderRef}
-            {...settingsMobile}
-            className="w-[100%] flex justify-center h-fit bg-[red] pl-[40px]"
-          >
+        <div className="mt-[50px] w-full h-fit overflow-x-hidden px-[50px] hidden md:flex xl:hidden justify-center ">
+          <Slider ref={sliderRef} {...settingsMd} className="w-[100%] h-fit">
+            <Feature1 />
+            <Feature2 />
+            <Feature3 />
+            <Feature4 />
+            <Feature5 />
+          </Slider>
+        </div>
+
+        <div className="mt-[50px] w-full h-fit overflow-x-hidden flex md:hidden justify-center">
+          <Slider ref={sliderRef} {...settingsMobile} className="w-[100%]">
             <Feature1 />
             <Feature2 />
             <Feature3 />
