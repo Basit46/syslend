@@ -32,7 +32,7 @@ const Hero = () => {
 
   return (
     <div id="hero" className="hero z-[20] w-full">
-      <div className="h-[100vh] vsm:h-[120vh] w-full px-[35px] md:px-[80px] flex items-center text-white">
+      <div className="h-[88vh] vsm:h-[120vh] w-full px-[35px] md:px-[80px] flex items-center text-white">
         <div className="flex-1 flex lg:block flex-col items-center">
           <h1
             ref={heroTextRef}

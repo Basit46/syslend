@@ -75,7 +75,7 @@ const Features = () => {
     >
       <div
         ref={featuresRef}
-        className="features w-[95vw] h-fit my-[50px] py-[20px] rounded-[22px]"
+        className="features w-[95vw] h-fit my-[100px] py-[50px] rounded-[22px]"
       >
         <h1 className="font-manrope font-bold text-center text-white text-[47px] tracking-[-1.5px] leading-[1.2]">
           SYSLEND Features
@@ -84,7 +84,7 @@ const Features = () => {
           more than you think
         </p>
 
-        <div className="mt-[50px] w-full h-fit overflow-x-hidden px-[50px] hidden vsm:flex justify-center ">
+        <div className="mt-[50px] w-full h-fit overflow-x-hidden px-[50px] hidden sm:flex justify-center ">
           <Slider
             ref={sliderRef}
             {...settings}
@@ -98,11 +98,11 @@ const Features = () => {
           </Slider>
         </div>
 
-        <div className="mt-[50px] w-full h-fit overflow-x-hidden flex vsm:hidden justify-center ">
+        <div className="mt-[50px] w-full h-fit overflow-x-hidden flex sm:hidden justify-center">
           <Slider
             ref={sliderRef}
             {...settingsMobile}
-            className="w-[100%] flex justify-center h-fit"
+            className="w-[100%] flex justify-center h-fit bg-[red] pl-[40px]"
           >
             <Feature1 />
             <Feature2 />

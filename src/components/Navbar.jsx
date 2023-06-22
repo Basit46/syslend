@@ -50,7 +50,7 @@ const Navbar = ({ openMenu, setOpenMenu }) => {
         </div>
         <div
           className={`${
-            openMenu ? "h-[25vh] pb-[30px]" : "h-0 "
+            openMenu ? "h-[20vh] pb-[30px]" : "h-0 "
           } duration-500 overflow-hidden px-[40px]`}
         >
           <ul
@@ -90,7 +90,7 @@ const Navbar = ({ openMenu, setOpenMenu }) => {
       {/* Mobile Background */}
       <div
         className={`${
-          openMenu ? "h-[38vh]" : "h-[12vh]"
+          openMenu ? "h-[32vh]" : "h-[12vh]"
         } md:hidden z-[0] fixed top-0 w-full bg-[#0c0150]`}
       />
     </>

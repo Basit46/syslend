@@ -33,7 +33,7 @@ const About = () => {
   return (
     <div
       ref={aboutRef}
-      className="w-full bg-[#241170] px-[40px] md:px-[60px] py-[50px]"
+      className="w-full bg-[#241170] px-[40px] md:px-[60px] py-[75px]"
     >
       <h1
         ref={firstAboutTextRef}
