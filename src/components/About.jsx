@@ -1,14 +1,52 @@
-import React from "react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
+  const aboutRef = useRef();
+  const firstAboutTextRef = useRef();
+  const secondAboutTextRef = useRef();
+
+  useEffect(() => {
+    gsap.fromTo(
+      firstAboutTextRef.current,
+      { scale: 0 },
+      {
+        scale: 1,
+        duration: 2,
+        scrollTrigger: { trigger: aboutRef.current, start: "top 70%" },
+      }
+    );
+
+    gsap.fromTo(
+      secondAboutTextRef.current,
+      { scale: 0 },
+      {
+        scale: 1,
+        duration: 2,
+        scrollTrigger: { trigger: aboutRef.current, start: "top 70%" },
+      }
+    );
+  }, []);
   return (
-    <div className="w-full bg-[#241170] px-[40px] md:px-[60px] py-[50px]">
-      <h1 className="max-w-full font-bold not-italic text-white text-[24px] md:text-[50px] tracking-[-1.5px] leading-[1.2] text-center">
+    <div
+      ref={aboutRef}
+      className="w-full bg-[#241170] px-[40px] md:px-[60px] py-[50px]"
+    >
+      <h1
+        ref={firstAboutTextRef}
+        className="font-bold not-italic text-white text-[24px] md:text-[50px] tracking-[-1.5px] leading-[1.2] text-center"
+      >
         SysLend is a decentralized money market for the Syscoin Ecosystem with
         tokenized Governance from Stakeholders to provide on-demand pool based
         Lending and Borrowing.
       </h1>
-      <p className="mt-[20px] font-medium text-[#888888] text-[16px] md:text-2xl tracking-[-0.5px] leading-normal text-center">
+      <p
+        ref={secondAboutTextRef}
+        className="mt-[20px] font-medium text-[#888888] text-[16px] md:text-2xl tracking-[-0.5px] leading-normal text-center"
+      >
         Experience the new era of decentralized Lending and Borrowing
         <br className="hidden lg:block" />
         with SYSLEND

@@ -5,11 +5,30 @@ import Feature2 from "./Feature2";
 import Feature3 from "./Feature3";
 import Feature4 from "./Feature4";
 import Feature5 from "./Feature5";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Features = () => {
   const slideRef = useRef();
-  const [count, setCount] = useState(0);
+  const featuresContRef = useRef();
+  const featuresRef = useRef();
 
+  useEffect(() => {
+    gsap.fromTo(
+      featuresRef.current,
+      { opacity: 0, y: 150 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        scrollTrigger: { trigger: featuresContRef.current, start: "top 70%" },
+      }
+    );
+  }, []);
+
+  const [count, setCount] = useState(0);
   useEffect(() => {
     // console.log(count);
     if (count == 5) {
@@ -37,10 +56,14 @@ const Features = () => {
 
   return (
     <div
+      ref={featuresContRef}
       id="features"
       className="w-full bg-[#2b1581] h-fit grid place-items-center"
     >
-      <div className="features w-[95vw] h-fit my-[50px] py-[20px] rounded-[22px]">
+      <div
+        ref={featuresRef}
+        className="features w-[95vw] h-fit my-[50px] py-[20px] rounded-[22px]"
+      >
         <h1 className="font-manrope font-bold text-center text-white text-[47px] tracking-[-1.5px] leading-[1.2]">
           SYSLEND Features
         </h1>

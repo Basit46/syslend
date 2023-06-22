@@ -1,12 +1,50 @@
-import React from "react";
 import syscoinImg from "../assets/syscoinImg.webp";
 import section2 from "../assets/section2.webp";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Section2 = () => {
+  const section2Ref = useRef();
+  const firstTextRef = useRef();
+  const secondTextRef = useRef();
+
+  useEffect(() => {
+    gsap.fromTo(
+      firstTextRef.current,
+      { opacity: 0, y: -10 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        scrollTrigger: { trigger: section2Ref.current, start: "top 10%" },
+      }
+    );
+
+    gsap.fromTo(
+      secondTextRef.current,
+      { opacity: 0, y: -10 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.3,
+        scrollTrigger: { trigger: section2Ref.current, start: "top 10%" },
+      }
+    );
+  }, []);
   return (
-    <div className="section2 h-fit lg:h-[100vh] w-full py-[100px] lg:py-[0px] lg:pb-[50px] text-white flex flex-col lg:flex-row justify-center gap-[50px] items-center lg:items-end">
+    <div
+      ref={section2Ref}
+      className="section2 h-fit lg:h-[100vh] w-full py-[100px] lg:py-[0px] lg:pb-[50px] text-white flex flex-col lg:flex-row justify-center gap-[50px] items-center lg:items-end"
+    >
       <div className="w-full xmd:w-[60%] lg:w-[40%]">
-        <h1 className="text-center lg:text-left font-manrope font-extrabold text-[28px] md:text-[50px] lg:text-[63px] tracking-[-0.8px] leading-[1.3]">
+        <h1
+          ref={firstTextRef}
+          className="text-center lg:text-left font-manrope font-extrabold text-[28px] md:text-[50px] lg:text-[63px] tracking-[-0.8px] leading-[1.3]"
+        >
           Tapping into
           <br className="hidden lg:block" /> SYSCOIN's
           <br className="hidden lg:block" /> Potential
@@ -17,7 +55,10 @@ const Section2 = () => {
             src={syscoinImg}
             alt="syscoin"
           />
-          <p className="px-[40px] xmd:px-0 font-manrope font-semibold text-center xmd:text-left text-[13px] md:text-[17px] lg:text-xl tracking-normal leading-[130%]">
+          <p
+            ref={secondTextRef}
+            className="px-[40px] xmd:px-0 font-manrope font-semibold text-center xmd:text-left text-[13px] md:text-[17px] lg:text-xl tracking-normal leading-[130%]"
+          >
             SYScoin harnesses Bitcoin security, leverages NEVM Smart contracts
             and Scale the blockchain with Layer 2 Rollux (ZK Rollups)
           </p>
