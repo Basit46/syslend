@@ -1,5 +1,6 @@
 import React from "react";
 import { FaTwitter, FaTelegram, FaGithub } from "react-icons/fa";
+import { Link } from "react-scroll";
 
 const Footer = () => {
   return (
@@ -8,20 +9,31 @@ const Footer = () => {
         <ul>
           <h1>SYSLEND</h1>
           <li>
-            <a href="#">Home</a>
+            <Link to="hero" smooth={true} duration={500}>
+              Home
+            </Link>
           </li>
           <li>
-            <a href="#">Features</a>
+            <Link to="features" smooth={true} duration={500}>
+              Features
+            </Link>
           </li>
           <li>
-            <a href="#">Roadmap</a>
+            <Link to="roadmap" smooth={true} duration={500}>
+              Roadmap
+            </Link>
           </li>
         </ul>
 
         <ul>
           <h1>Other</h1>
           <li>
-            <a href="#">Team & Governance</a>
+            <a
+              target="blank"
+              href="https://angry-pyramid-987.notion.site/Documentation-Coming-Soon-3bfb301b92af4c0dba107bbaf80d2c83"
+            >
+              Team & Governance
+            </a>
           </li>
           <li>
             <a href="#">Contact us</a>
@@ -31,18 +43,24 @@ const Footer = () => {
         <ul>
           <h1>Legal & Disclaimer links</h1>
           <li>
-            <a href="#">Terms & Conditions</a>
+            <a href="https://angry-pyramid-987.notion.site/Documentation-Coming-Soon-3bfb301b92af4c0dba107bbaf80d2c83">
+              Terms & Conditions
+            </a>
           </li>
           <li>
-            <a href="#">Privacy Policy</a>
+            <a href="https://angry-pyramid-987.notion.site/Documentation-Coming-Soon-3bfb301b92af4c0dba107bbaf80d2c83">
+              Privacy Policy
+            </a>
           </li>
           <li>
-            <a href="#">Disclaimer</a>
+            <a href="https://angry-pyramid-987.notion.site/Documentation-Coming-Soon-3bfb301b92af4c0dba107bbaf80d2c83">
+              Disclaimer
+            </a>
           </li>
         </ul>
       </div>
 
-      <div className="mt-[4px] flex justify-between items-center">
+      <div className="mt-[4px] flex pb-[60px] vsm:pb-0 justify-between items-center">
         <p className="text-[14px] font-[500] text-[#999999]">© 2023 SYSLEND.</p>
         <div className="flex gap-[20px] text-[33px] text-[#6666FF]">
           <FaTwitter />

@@ -11,7 +11,7 @@ const Features = () => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    console.log(count);
+    // console.log(count);
     if (count == 5) {
       slideRef.current.style.transition = "0s";
       slideRef.current.style.transform = `translateX(-${count * 380}px)`;

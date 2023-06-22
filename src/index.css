@@ -10,7 +10,7 @@
     @apply font-[600] leading-[25.6px] mb-[10px];
   }
   footer .links-wrap ul li {
-    @apply mt-[10px] text-white font-[500] leading-[25.6px] hover:text-[#0088ff];
+    @apply mt-[10px] text-white font-[500] leading-[25.6px] hover:text-[#0088ff] cursor-pointer;
   }
 }
 
