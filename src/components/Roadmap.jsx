@@ -4,7 +4,7 @@ import roadmapMobile from "../assets/roadmapMobile.webp";
 
 const Roadmap = () => {
   return (
-    <div className="roadmap bg-[#0C0150] h-fit w-full pt-[30px]">
+    <div id="roadmap" className="roadmap bg-[#0C0150] h-fit w-full pt-[30px]">
       <h1 className="font-poppins font-bold text-white text-[41px] md:text-[86px] tracking-[-1.5px] underline leading-[1.2] text-center">
         Roadmap
       </h1>

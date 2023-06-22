@@ -32,7 +32,10 @@ const Features = () => {
     };
   }, []);
   return (
-    <div className="w-full bg-[#2b1581] h-fit grid place-items-center">
+    <div
+      id="features"
+      className="w-full bg-[#2b1581] h-fit grid place-items-center"
+    >
       <div className="features w-[95vw] h-fit my-[50px] py-[20px] rounded-[22px]">
         <h1 className="font-manrope font-bold text-center text-white text-[47px] tracking-[-1.5px] leading-[1.2]">
           SYSLEND Features
