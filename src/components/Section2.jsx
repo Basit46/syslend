@@ -19,7 +19,10 @@ const Section2 = () => {
         opacity: 1,
         y: 0,
         duration: 1,
-        scrollTrigger: { trigger: section2Ref.current, start: "top 10%" },
+        scrollTrigger: {
+          trigger: section2Ref.current,
+          start: window.innerWidth > 400 ? "top 10%" : "top 50%",
+        },
       }
     );
 
@@ -31,7 +34,10 @@ const Section2 = () => {
         y: 0,
         duration: 1,
         delay: 0.3,
-        scrollTrigger: { trigger: section2Ref.current, start: "top 10%" },
+        scrollTrigger: {
+          trigger: section2Ref.current,
+          start: window.innerWidth > 400 ? "top 10%" : "top 50%",
+        },
       }
     );
   }, []);

@@ -18,7 +18,10 @@ const Tokenomics = () => {
       {
         opacity: 1,
         duration: 1,
-        scrollTrigger: { trigger: contRef.current, start: "top 50%" },
+        scrollTrigger: {
+          trigger: contRef.current,
+          start: window.innerWidth > 400 ? "top 50%" : "top 70%",
+        },
       }
     );
     gsap.fromTo(
@@ -27,7 +30,10 @@ const Tokenomics = () => {
       {
         opacity: 1,
         duration: 1,
-        scrollTrigger: { trigger: contRef.current, start: "top 50%" },
+        scrollTrigger: {
+          trigger: contRef.current,
+          start: window.innerWidth > 400 ? "top 50%" : "top 70%",
+        },
       }
     );
   }, []);
