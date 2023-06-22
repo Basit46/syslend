@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Feature1 from "./Feature1";
 import Feature2 from "./Feature2";
 import Feature3 from "./Feature3";
@@ -13,9 +13,11 @@ import "slick-carousel/slick/slick-theme.css";
 gsap.registerPlugin(ScrollTrigger);
 
 const Features = () => {
-  const slideRef = useRef();
+  const sliderRef = useRef();
   const featuresContRef = useRef();
   const featuresRef = useRef();
+
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     gsap.fromTo(
@@ -42,6 +44,7 @@ const Features = () => {
     centerPadding: "0px",
     autoplay: true,
     autoplaySpeed: 5000,
+    beforeChange: (current, next) => setCurrentSlide(next),
   };
 
   let settingsMobile = {
@@ -56,6 +59,12 @@ const Features = () => {
     centerPadding: "0px",
     autoplay: true,
     autoplaySpeed: 5000,
+    beforeChange: (current, next) => setCurrentSlide(next),
+  };
+
+  const handleRadioClick = (index) => {
+    setCurrentSlide(index);
+    sliderRef.current.slickGoTo(index);
   };
 
   return (
@@ -76,7 +85,11 @@ const Features = () => {
         </p>
 
         <div className="mt-[50px] w-full h-fit overflow-x-hidden px-[50px] hidden vsm:flex justify-center ">
-          <Slider {...settings} className="w-[100%] flex justify-center">
+          <Slider
+            ref={sliderRef}
+            {...settings}
+            className="w-[100%] flex justify-center h-fit"
+          >
             <Feature1 />
             <Feature2 />
             <Feature3 />
@@ -86,13 +99,33 @@ const Features = () => {
         </div>
 
         <div className="mt-[50px] w-full h-fit overflow-x-hidden flex vsm:hidden justify-center ">
-          <Slider {...settingsMobile} className="w-[100%] flex justify-center">
+          <Slider
+            ref={sliderRef}
+            {...settingsMobile}
+            className="w-[100%] flex justify-center h-fit"
+          >
             <Feature1 />
             <Feature2 />
             <Feature3 />
             <Feature4 />
             <Feature5 />
           </Slider>
+        </div>
+
+        <div className="radio-container">
+          {/* Render the radio buttons */}
+          {React.Children.toArray(
+            Array(5)
+              .fill(null)
+              .map((_, index) => (
+                <div
+                  className={`radio-button ${
+                    currentSlide === index ? "active" : ""
+                  }`}
+                  onClick={() => handleRadioClick(index)}
+                />
+              ))
+          )}
         </div>
       </div>
     </div>
