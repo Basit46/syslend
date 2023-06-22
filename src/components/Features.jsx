@@ -9,28 +9,32 @@ import Feature5 from "./Feature5";
 const Features = () => {
   const slideRef = useRef();
   const [count, setCount] = useState(0);
+
   useEffect(() => {
-    let slide = 380;
-    let slidCount = 0;
+    console.log(count);
+    if (count == 5) {
+      slideRef.current.style.transition = "0s";
+      slideRef.current.style.transform = `translateX(-${count * 380}px)`;
+    } else {
+      slideRef.current.style.transition = "1s";
+      slideRef.current.style.transform = `translateX(-${count * 380}px)`;
+    }
+  }, [count]);
+
+  useEffect(() => {
     const timeInt = setInterval(() => {
-      if (slidCount < 5) {
-        slideRef.current.style.transition = "1s";
-        slideRef.current.style.transform = `translateX(-${slide}px)`;
-        setCount((prev) => prev + 1);
-        slidCount += 1;
-        slide += 380;
+      if (count < 5) {
+        setCount((prev) => (prev + 1) % 6);
       } else {
-        slidCount = 0;
         setCount(0);
-        slide = 0;
-        slideRef.current.style.transition = "0s";
-        slideRef.current.style.transform = `translateX(-${slide}px)`;
       }
-    }, 1000);
+    }, 2000);
+
     return () => {
       clearInterval(timeInt);
     };
   }, []);
+
   return (
     <div
       id="features"
@@ -65,7 +69,7 @@ const Features = () => {
         <div className="mt-[40px] mx-auto bg-[#00333333] w-[90px] h-[30px] rounded-[50px] flex justify-evenly items-center">
           <div
             className={`${
-              count === 0 || count === 4 ? "opacity-100" : "opacity-50"
+              count === 0 ? "opacity-100" : "opacity-50"
             } w-[10px] h-[10px] rounded-full bg-white`}
           />
           <div
