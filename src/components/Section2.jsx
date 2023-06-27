@@ -44,7 +44,7 @@ const Section2 = () => {
   return (
     <div
       ref={section2Ref}
-      className="section2 bg-[red] h-fit lg:h-[100vh] w-full py-[50px] lg:py-[0px]  text-white flex flex-col lg:flex-row justify-center gap-[50px] items-center"
+      className="section2  h-fit lg:h-[100vh] w-full py-[50px] lg:py-[0px]  text-white flex flex-col lg:flex-row justify-center gap-[50px] items-center"
     >
       <div className="w-full xmd:w-[60%] lg:w-[40%]">
         <h1

@@ -86,7 +86,7 @@ const Features = () => {
     <div
       ref={featuresContRef}
       id="features"
-      className="w-full bg-[#2b1581] h-fit grid place-items-center"
+      className="w-full h-fit grid place-items-center"
     >
       <div
         ref={featuresRef}

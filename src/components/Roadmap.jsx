@@ -11,8 +11,12 @@ const Roadmap = () => {
       <p className="font-manrope font-bold text-white text-[14px] md:text-[23px] tracking-[0.7px] leading-[1.4] text-center">
         SYSLEND Development Timeline
       </p>
-      <div>
-        <img className="hidden md:block" src={roadmapImg} alt="roadmap" />
+      <div className="mt-[20px] w-full flex justify-center">
+        <img
+          className="hidden md:block w-[80%]"
+          src={roadmapImg}
+          alt="roadmap"
+        />
         <img className="block md:hidden" src={roadmapMobile} alt="roadmap" />
       </div>
     </div>
