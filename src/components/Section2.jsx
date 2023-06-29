@@ -70,9 +70,9 @@ const Section2 = () => {
           </p>
         </div>
       </div>
-      <div className="w-[80%] lg:w-[40%]">
+      <div className="w-[80%] lg:w-[40%] h-full flex items-center">
         <img
-          className="h-fit w-full object-cover"
+          className="h-fit lg:h-[90%] w-full object-cover"
           src={section2}
           alt="section2_img"
         />

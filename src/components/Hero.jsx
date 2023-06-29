@@ -19,7 +19,7 @@ const Hero = () => {
     gsap.to(heroImgRef.current, {
       opacity: 1,
       y: -40,
-      duration: 1,
+      duration: 0.8,
       scrollTrigger: {
         trigger: heroImgRef.current,
         start: "bottom 50%",
@@ -32,7 +32,7 @@ const Hero = () => {
 
   return (
     <div id="hero" className="hero z-[20] w-full">
-      <div className="h-[88vh] vsm:h-[120vh] w-full px-[35px] md:px-[80px] flex items-center text-white">
+      <div className="hero-child  relative h-[88vh] vsm:h-[120vh] w-full px-[35px] md:px-[80px] flex items-center text-white">
         <div className="flex-1 flex lg:block flex-col items-center">
           <h1
             ref={heroTextRef}
