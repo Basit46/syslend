@@ -58,22 +58,26 @@ const Navbar = ({ openMenu, setOpenMenu }) => {
               openMenu ? "flex" : "hidden"
             }  h-full w-full flex-col gap-[20px] items-center`}
           >
-            <Link to="features" offset={-100} smooth={true} duration={500}>
-              <li
-                onClick={() => setOpenMenu(false)}
-                className="hover:text-[#0088ff] cursor-pointer font-[500]"
-              >
-                Features
-              </li>
+            <Link
+              to="features"
+              className="hover:text-[#0088ff] cursor-pointer font-[500]"
+              onClick={() => setOpenMenu(false)}
+              offset={-100}
+              smooth={true}
+              duration={500}
+            >
+              Features
             </Link>
 
-            <Link to="roadmap" offset={-100} smooth={true} duration={500}>
-              <li
-                onClick={() => setOpenMenu(false)}
-                className="hover:text-[#0088ff] cursor-pointer font-[500]"
-              >
-                Roadmap
-              </li>
+            <Link
+              to="roadmap"
+              onClick={() => setOpenMenu(false)}
+              className="hover:text-[#0088ff] cursor-pointer font-[500]"
+              offset={-100}
+              smooth={true}
+              duration={500}
+            >
+              Roadmap
             </Link>
             <a
               onClick={() => setOpenMenu(false)}

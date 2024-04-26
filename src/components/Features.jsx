@@ -135,7 +135,7 @@ const Features = () => {
             Array(5)
               .fill(null)
               .map((_, index) => (
-                <div
+                <button
                   className={`radio-button ${
                     currentSlide === index ? "active" : ""
                   }`}
