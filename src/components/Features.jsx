@@ -136,11 +136,11 @@ const Features = () => {
               .fill(null)
               .map((_, index) => (
                 <button
+                  onClick={() => handleRadioClick(index)}
                   className={`radio-button ${
                     currentSlide === index ? "active" : ""
                   }`}
-                  onClick={() => handleRadioClick(index)}
-                />
+                ></button>
               ))
           )}
         </div>
